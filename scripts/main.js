@@ -108,6 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentMaterial = 'Cuero';
     let currentColor = 'Marrón Tabaco';
 
+    const materialSpecs = {
+        'Cuero': { treat: 'Protección Nutritiva', origin: 'Italia', dur: '150k ciclos' },
+        'Alcántara': { treat: 'Repelente Líquidos', origin: 'Italia', dur: '120k ciclos' },
+        'Tela Premium': { treat: 'Antimanchas Teflón', origin: 'Alemania', dur: '90k ciclos' }
+    };
+
     materialBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             materialBtns.forEach(b => b.classList.remove('active'));
@@ -161,11 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `images/materiales/${matKey}-${colKey}.png`;
     }
 
-    const materialSpecs = {
-        'Cuero': { treat: 'Protección Nutritiva', origin: 'Italia', dur: '150k ciclos' },
-        'Alcántara': { treat: 'Repelente Líquidos', origin: 'Italia', dur: '120k ciclos' },
-        'Tela Premium': { treat: 'Antimanchas Teflón', origin: 'Alemania', dur: '90k ciclos' }
-    };
+
 
     function updateMaterialInfo() {
         materialInfoDisplay.textContent = `Combinación: ${currentMaterial} en ${currentColor}`;
