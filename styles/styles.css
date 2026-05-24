@@ -324,13 +324,6 @@ section:nth-child(even) {
     transform: translateY(-2px);
 }
 
-@media (max-width: 992px) {
-    .service-container {
-        grid-template-columns: 1fr;
-        padding: 40px;
-        gap: 40px;
-    }
-}
 
 /* Bright Showroom Visual Preview Box - Lighter background with soft shadows */
 .visual-preview {
@@ -756,17 +749,6 @@ footer {
     color: var(--text-main);
 }
 
-@media (max-width: 576px) {
-    .toast-container {
-        bottom: 20px;
-        right: 20px;
-        left: 20px;
-    }
-    .toast {
-        width: 100%;
-    }
-}
-
 /* --- Advanced Tech Panel and Specifications Styling --- */
 .tech-header {
     display: flex;
@@ -821,4 +803,346 @@ footer {
     color: #ffffff;
     font-weight: 700;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+/* =====================================================
+   HAMBURGER MENU BUTTON
+   ===================================================== */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 0;
+    transition: var(--transition);
+    z-index: 200;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text-main);
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                opacity 0.25s ease;
+}
+
+.nav-toggle:hover {
+    background: rgba(255, 42, 75, 0.15);
+    border-color: rgba(255, 42, 75, 0.4);
+}
+
+/* Animación X al abrir */
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* =====================================================
+   RESPONSIVE — TABLET (≤ 992px)
+   ===================================================== */
+@media (max-width: 992px) {
+    .hero {
+        padding: 140px 0 110px;
+    }
+
+    .hero h1 {
+        font-size: 3.6rem;
+    }
+
+    .hero p {
+        font-size: 1.15rem;
+    }
+
+    section {
+        padding: 90px 0;
+    }
+
+    .section-title {
+        margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+        font-size: 2.4rem;
+    }
+
+    .nosotros-content {
+        padding: 44px 36px;
+    }
+
+    .contact-form {
+        padding: 44px 36px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE — MOBILE (≤ 768px)
+   ===================================================== */
+@media (max-width: 768px) {
+
+    /* Container */
+    .container {
+        padding: 0 18px;
+    }
+
+    /* --- NAV --- */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(14, 18, 30, 0.97);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border-bottom: 1px solid var(--glass-border);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        gap: 0;
+        padding: 8px 0 16px;
+        z-index: 150;
+        animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 14px 24px;
+        font-size: 0.95rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 42, 75, 0.08);
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Header position for dropdown */
+    header {
+        position: sticky;
+        top: 0;
+    }
+
+    header .container {
+        position: relative;
+    }
+
+    /* --- HERO --- */
+    .hero {
+        padding: 110px 0 80px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+        letter-spacing: -0.01em;
+        margin-bottom: 1.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .btn-hero {
+        padding: 15px 32px;
+        font-size: 0.9rem;
+    }
+
+    /* --- SECTIONS --- */
+    section {
+        padding: 70px 0;
+    }
+
+    .section-title {
+        margin-bottom: 40px;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .section-title p {
+        font-size: 1rem;
+    }
+
+    /* --- SERVICE CARDS --- */
+    .service-container {
+        grid-template-columns: 1fr;
+        padding: 28px 20px;
+        gap: 28px;
+        border-radius: 18px;
+    }
+
+    /* Visual preview more compact on mobile */
+    .visual-preview {
+        height: 260px;
+        border-radius: 14px;
+    }
+
+    .car-image {
+        max-width: 88%;
+        max-height: 88%;
+    }
+
+    /* Controls panel */
+    .controls-panel h3 {
+        font-size: 1.4rem;
+    }
+
+    /* Color dots slightly smaller but still touch-friendly */
+    .color-dot {
+        width: 38px;
+        height: 38px;
+    }
+
+    /* Option buttons wrap nicely */
+    .palette {
+        gap: 10px;
+    }
+
+    .option-btn {
+        padding: 10px 16px;
+        font-size: 0.82rem;
+    }
+
+    /* Tech specs grid: single column on mobile */
+    .tech-grid {
+        grid-template-columns: 1fr;
+        gap: 10px 0;
+    }
+
+    .part-info-box {
+        padding: 18px;
+        border-radius: 12px;
+    }
+
+    /* --- ABOUT US --- */
+    .nosotros-content {
+        padding: 32px 22px;
+        border-radius: 18px;
+    }
+
+    .nosotros-content p {
+        font-size: 1rem;
+    }
+
+    /* --- CONTACT FORM --- */
+    .contact-form {
+        padding: 32px 22px;
+        border-radius: 18px;
+    }
+
+    .btn-submit {
+        padding: 15px 24px;
+        font-size: 0.95rem;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+        padding: 40px 0;
+        font-size: 0.85rem;
+    }
+
+    /* --- GLOW ORBS — reducir tamaño para no saturar móvil --- */
+    .glow-orb-1,
+    .glow-orb-2,
+    .glow-orb-3 {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* =====================================================
+   RESPONSIVE — SMALL MOBILE (≤ 480px)
+   ===================================================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 14px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .btn-hero {
+        padding: 13px 26px;
+        font-size: 0.85rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.7rem;
+    }
+
+    .visual-preview {
+        height: 210px;
+    }
+
+    .controls-panel h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-container {
+        padding: 22px 16px;
+        gap: 22px;
+    }
+
+    .logo img {
+        height: 36px;
+    }
+
+    .option-btn {
+        padding: 8px 12px;
+        font-size: 0.78rem;
+    }
+
+    .color-dot {
+        width: 34px;
+        height: 34px;
+    }
+
+    .toast-container {
+        bottom: 16px;
+        right: 12px;
+        left: 12px;
+        max-width: 100%;
+    }
 }

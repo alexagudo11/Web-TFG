@@ -238,4 +238,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }, 5000);
     }
+
+    // --- 5. HAMBURGER MENU (MOBILE NAV) ---
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks  = document.getElementById('nav-links');
+
+    function openMenu() {
+        navToggle.classList.add('open');
+        navLinks.classList.add('open');
+        navToggle.setAttribute('aria-expanded', 'true');
+        navToggle.setAttribute('aria-label', 'Cerrar menú');
+    }
+
+    function closeMenu() {
+        navToggle.classList.remove('open');
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Abrir menú');
+    }
+
+    if (navToggle && navLinks) {
+        // Toggle on button click
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.contains('open') ? closeMenu() : openMenu();
+        });
+
+        // Close when any nav link is clicked (smooth scroll + close)
+        navLinks.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => closeMenu());
+        });
+
+        // Close when clicking outside the header
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('header')) {
+                closeMenu();
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+        });
+    }
 });
