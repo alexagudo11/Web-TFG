@@ -112,6 +112,13 @@ body::before {
     z-index: 2;
 }
 
+/* En el header, el container no necesita crear stacking context
+   para que el menú móvil no quede atrapado dentro de él */
+header .container {
+    position: static;
+    z-index: auto;
+}
+
 /* Header & Nav */
 header {
     background: var(--glass-bg);
@@ -924,9 +931,9 @@ footer {
     /* El menú se oculta y, cuando tiene .open, aparece en una nueva fila */
     .nav-links {
         display: none;
-        width: calc(100% + 36px);   /* rompe el padding del container */
+        /* 100vw con offset negativo para romper el padding del container */
+        width: 100vw;
         margin-left: -18px;
-        margin-right: -18px;
         flex-direction: column;
         gap: 0;
         padding: 6px 0 14px;
