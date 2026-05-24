@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integra | Servicios de Automoción</title>
+    <link rel="stylesheet" href="styles/styles.css?v=1.0.2">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/LOGO EMPRESA.png">
+</head>
+
+<body>
+    <!-- Background glowing tech elements -->
+    <div class="glow-orb-1"></div>
+    <div class="glow-orb-2"></div>
+    <div class="glow-orb-3"></div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><img src="images/LOGO EMPRESA.png" alt="Integra Logo"></a>
+                <ul class="nav-links">
+                    <li><a href="#pintura">Pintura y Vinilados</a></li>
+                    <li><a href="#carroceria">Carrocería</a></li>
+                    <li><a href="#tapiceria">Tapicería</a></li>
+                    <li><a href="#nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Cada detalle habla por sí solo</h1>
+            <p>En Integra combinamos velocidad de entrega con acabados de alto nivel. Porque un vehículo excepcional no debería esperar.</p>
+            <a href="#pintura" class="btn-hero">DESCUBRIR SERVICIOS</a>
+        </div>
+    </section>
+
+    <!-- Pintura -->
+    <section id="pintura">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pintura y Vinilados</h2>
+                <p>Elija el color perfecto para su vehículo con nuestra tecnología de pintura premium.</p>
+            </div>
+            <div class="service-container">
+                <div class="visual-preview" id="pintura-preview">
+                    <!-- A placeholder car image or SVG that we can change color via CSS filter -->
+                    <img src="images/black-solid-removebg-preview.png" alt="Coche" class="car-image" id="car-paint-img">
+                </div>
+                <div class="controls-panel">
+                    <h3>Seleccione un color</h3>
+                    <p>Nuestra gama de acabados incluye metalizados, mates y perlados.</p>
+                    <div class="palette">
+                        <div class="color-dot active" style="background: #000000;"
+                            data-image="images/black-solid-removebg-preview.png" data-name="Negro Sólido"></div>
+                        <div class="color-dot" style="background: #ffffff; border: 1px solid #ddd;"
+                            data-image="images/white-solid-removebg-preview.png" data-name="Blanco Sólido"></div>
+                        <div class="color-dot" style="background: #1a3a5a;"
+                            data-image="images/blue-metallic-removebg-preview (1).png" data-name="Azul Metalizado">
+                        </div>
+                        <div class="color-dot" style="background: #7a7a7a;"
+                            data-image="images/grey-metallic-removebg-preview.png" data-name="Gris Metalizado"></div>
+                        <div class="color-dot" style="background: #7B1113;"
+                            data-image="images/thundernight-metalic-removebg-preview (1).png"
+                            data-name="Thundernight Metalizado"></div>
+                        <div class="color-dot" style="background: #708090;"
+                            data-image="images/york-green-metalic-removebg-preview.png"
+                            data-name="York Green Metalizado"></div>
+                        <div class="color-dot" style="background: #c0392b;"
+                            data-image="images/-metallic-removebg-preview.png" data-name="Rojo Metalizado"></div>
+                    </div>
+                    <div class="part-info-box" style="margin-top: 25px;">
+                        <div class="tech-header">
+                            <strong>Especificaciones Técnicas</strong>
+                            <span class="tech-tag">Paint Tech</span>
+                        </div>
+                        <div class="tech-grid">
+                            <div class="tech-item"><span class="tech-lbl">Acabado:</span> <span class="tech-val"
+                                    id="spec-paint-finish">Brillante</span></div>
+                            <div class="tech-item"><span class="tech-lbl">Reflexión:</span> <span class="tech-val"
+                                    id="spec-paint-gloss">98% Gloss</span></div>
+                            <div class="tech-item"><span class="tech-lbl">Protección:</span> <span
+                                    class="tech-val">Cerámica 9H</span></div>
+                            <div class="tech-item"><span class="tech-lbl">Capas:</span> <span class="tech-val">3
+                                    Capas</span></div>
+                        </div>
+                        <p id="selected-color-name" style="margin-top: 15px; font-weight: bold; margin-bottom: 0;">
+                            Color: Negro Sólido</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrocería -->
+    <section id="carroceria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Carrocería</h2>
+                <p>Reparación y personalización de piezas exteriores con acabados de fábrica.</p>
+            </div>
+            <div class="service-container">
+                <div class="visual-preview">
+                    <img src="images/carroceria/capó-removebg-preview.png" alt="Piezas" class="car-image"
+                        id="car-parts-img">
+                </div>
+                <div class="controls-panel">
+                    <h3>Selección por Piezas</h3>
+                    <div class="palette" id="parts-palette">
+                        <button class="option-btn active" data-part="Capó"
+                            data-image="images/carroceria/capó-removebg-preview.png"
+                            style="padding: 8px 15px; font-size: 0.85rem;">Capó</button>
+                        <button class="option-btn" data-part="Lip Delantero"
+                            data-image="images/carroceria/lip_delantero-removebg-preview.png"
+                            style="padding: 8px 15px; font-size: 0.85rem;">Lip Delantero</button>
+                        <button class="option-btn" data-part="Difusor de Taloneras"
+                            data-image="images/carroceria/difusor_de_taloneras-removebg-preview.png"
+                            style="padding: 8px 15px; font-size: 0.85rem;">Taloneras</button>
+                        <button class="option-btn" data-part="Difusor Trasero"
+                            data-image="images/carroceria/difusor_trasero-removebg-preview.png"
+                            style="padding: 8px 15px; font-size: 0.85rem;">Difusor T.</button>
+                        <button class="option-btn" data-part="Alerón Trasero"
+                            data-image="images/carroceria/aleron trasero.png"
+                            style="padding: 8px 15px; font-size: 0.85rem;">Alerón</button>
+                        <button class="option-btn" data-part="Retrovisores"
+                            data-image="images/carroceria/retrovisores_laterales-removebg-preview.png"
+                            style="padding: 8px 15px; font-size: 0.85rem;">Retrovisores</button>
+                    </div>
+                    <div id="part-info" class="part-info-box">
+                        <div class="tech-header">
+                            <strong>Especificaciones Técnicas</strong>
+                            <span class="tech-tag">Carbon Fibre</span>
+                        </div>
+                        <div class="tech-grid">
+                            <div class="tech-item"><span class="tech-lbl">Material:</span> <span class="tech-val"
+                                    id="spec-part-material">Carbono Prepreg</span></div>
+                            <div class="tech-item"><span class="tech-lbl">Peso:</span> <span class="tech-val"
+                                    id="spec-part-weight">-45% vs OEM</span></div>
+                            <div class="tech-item"><span class="tech-lbl">Montaje:</span> <span class="tech-val">OEM
+                                    Bolt-on</span></div>
+                            <div class="tech-item"><span class="tech-lbl">Aero:</span> <span class="tech-val"
+                                    id="spec-part-aero">Optimizado</span></div>
+                        </div>
+                        <div style="margin-top: 15px;">
+                            <strong>Pieza seleccionada:</strong> Capó delantero <br>
+                            <strong>Tiempo estimado:</strong> 3-5 días hábiles.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tapicería -->
+    <section id="tapiceria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tapicería</h2>
+                <p>Renovación de interiores con materiales de primera calidad.</p>
+            </div>
+            <div class="service-container">
+                <div class="visual-preview" id="tapiceria-preview">
+                    <img src="images/materiales/cuero-marrontabaco.png" alt="Tapicería" class="car-image"
+                        id="car-upholstery-img">
+                </div>
+                <div class="controls-panel">
+                    <h3>Material y Color</h3>
+                    <div class="material-list">
+                        <div style="margin-bottom: 15px;">
+                            <label>Material:</label>
+                            <div class="palette" style="margin-top: 5px;">
+                                <button class="option-btn active" data-material="Cuero"
+                                    style="padding: 5px 12px; font-size: 0.8rem;">Cuero</button>
+                                <button class="option-btn" data-material="Alcántara"
+                                    style="padding: 5px 12px; font-size: 0.8rem;">Alcántara</button>
+                                <button class="option-btn" data-material="Tela Premium"
+                                    style="padding: 5px 12px; font-size: 0.8rem;">Tela
+                                    Premium</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Color del Interior:</label>
+                            <div class="part-info-box">
+                                <div class="tech-header">
+                                    <strong>Especificaciones Técnicas</strong>
+                                    <span class="tech-tag">Upholstery</span>
+                                </div>
+                                <div class="tech-grid">
+                                    <div class="tech-item"><span class="tech-lbl">Costuras:</span> <span
+                                            class="tech-val">Doble Refuerzo</span></div>
+                                    <div class="tech-item"><span class="tech-lbl">Tratamiento:</span> <span
+                                            class="tech-val" id="spec-upholstery-treat">Anti-UV / Manchas</span></div>
+                                    <div class="tech-item"><span class="tech-lbl">Origen:</span> <span class="tech-val"
+                                            id="spec-upholstery-origin">Italia</span></div>
+                                    <div class="tech-item"><span class="tech-lbl">Durabilidad:</span> <span
+                                            class="tech-val" id="spec-upholstery-dur">100k ciclos</span></div>
+                                </div>
+                            </div>
+                            <div class="palette">
+                                <div class="color-dot active" style="background: #4a3728;"
+                                    data-material-color="Marrón Tabaco"></div>
+                                <div class="color-dot" style="background: #000;" data-material-color="Negro Carbón">
+                                </div>
+                                <div class="color-dot" style="background: #dcdcdc;" data-material-color="Gris Ártico">
+                                </div>
+                                <div class="color-dot" style="background: #f5f5dc;" data-material-color="Beige Arena">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p id="selected-material-info" style="margin-top: 15px; font-style: italic;">Combinación: Cuero en
+                        Marrón Tabaco</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Nosotros</h2>
+            </div>
+            <div class="nosotros-content">
+                <p>Integra es un taller especializado con pocos de trayectoria en el sector del automóvil. Sin embargo, contamos con grandes especialistas y apasionados en este mundo. No solo
+                    reparamos coches, sino que los devolvemos a su estado original o incluso mejorado, aplicando
+                    técnicas de precisión y materiales certificados.</p>
+                <p>Nuestro equipo está formado por entusiastas del motor que entienden el
+                    valor de cada detalle.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contáctanos</h2>
+                <p>Solicite presupuesto sin compromiso para su proyecto.</p>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" placeholder="Ej: Juan Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="juan@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea rows="4" placeholder="Describa su proyecto o consulta..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Integra Servicios Automotrices. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="scripts/main.js?v=1.0.2"></script>
+</body>
+
+</html>
